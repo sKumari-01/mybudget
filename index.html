@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <title>MyBudget</title>
+
+  <link rel="stylesheet"
+        href="css/style.css">
+
+  <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+  <div class="bg1"></div>
+  <div class="bg2"></div>
+
+  <header>
+
+    <div class="logo-box">
+
+      <div class="logo">
+        ₹
+      </div>
+
+      <div>
+        <h1>MyBudget</h1>
+        <p>Personal Finance Tracker</p>
+      </div>
+
+    </div>
+
+    <button id="themeBtn">
+      🌙
+    </button>
+
+  </header>
+
+  <section class="hero">
+
+    <div class="hero-left">
+
+      <h2>
+        Control Your Money Smarter 💸
+      </h2>
+
+      <p>
+        Track expenses, manage budget,
+        analyze spending and save more.
+      </p>
+
+    </div>
+
+    <div class="hero-card">
+
+      <h3>Remaining Balance</h3>
+
+      <h1>
+        ₹ <span id="remainingAmount">0</span>
+      </h1>
+
+    </div>
+
+  </section>
+
+  <section class="cards">
+
+    <div class="card purple">
+
+      <h3>Budget</h3>
+
+      <h2>
+        ₹ <span id="budgetAmount">0</span>
+      </h2>
+
+    </div>
+
+    <div class="card red">
+
+      <h3>Expenses</h3>
+
+      <h2>
+        ₹ <span id="expenseAmount">0</span>
+      </h2>
+
+    </div>
+
+    <div class="card blue">
+
+      <h3>Transactions</h3>
+
+      <h2 id="transactionCount">
+        0
+      </h2>
+
+    </div>
+
+  </section>
+
+  <section class="main-grid">
+
+    <div class="left-panel glass">
+
+      <h2>Add Expense</h2>
+
+      <input type="text"
+             id="title"
+             placeholder="Expense title">
+
+      <input type="number"
+             id="amount"
+             placeholder="Amount">
+
+      <select id="category">
+
+        <option value="Food">Food</option>
+
+        <option value="Travel">Travel</option>
+
+        <option value="Shopping">Shopping</option>
+
+        <option value="Bills">Bills</option>
+
+        <option value="Entertainment">Entertainment</option>
+
+        <option value="Health">Health</option>
+
+      </select>
+
+      <input type="date"
+             id="date">
+
+      <button id="addExpenseBtn"
+              class="primary-btn">
+
+        Add Expense
+
+      </button>
+
+      <hr>
+
+      <h2>Set Monthly Budget</h2>
+
+      <input type="number"
+             id="budgetInput"
+             placeholder="Monthly budget">
+
+      <button id="setBudgetBtn"
+              class="green-btn">
+
+        Save Budget
+
+      </button>
+
+      <button id="exportBtn"
+              class="orange-btn">
+
+        Export CSV
+
+      </button>
+
+    </div>
+
+    <div class="right-panel">
+
+      <div class="tools glass">
+
+        <input type="text"
+               id="searchInput"
+               placeholder="Search expense">
+
+        <select id="filterCategory">
+
+          <option value="All">
+            All Categories
+          </option>
+
+          <option value="Food">
+            Food
+          </option>
+
+          <option value="Travel">
+            Travel
+          </option>
+
+          <option value="Shopping">
+            Shopping
+          </option>
+
+          <option value="Bills">
+            Bills
+          </option>
+
+          <option value="Entertainment">
+            Entertainment
+          </option>
+
+          <option value="Health">
+            Health
+          </option>
+
+        </select>
+
+      </div>
+
+      <div class="chart-box glass">
+
+        <canvas id="expenseChart"></canvas>
+
+      </div>
+
+      <div class="expense-box glass">
+
+        <h2>Recent Expenses</h2>
+
+        <div id="expenseList"></div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <script src="js/app.js"></script>
+
+</body>
+</html>
